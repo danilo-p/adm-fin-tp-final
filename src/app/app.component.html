@@ -1,12 +1,21 @@
 <h1>Trabalho Final de Administração Financeira</h1>
 
+<!-- Menu com tabs -->
 <button (click)="selecionaTab('app-conversao-de-juros')">app-conversao-de-juros</button>
 <button (click)="selecionaTab('app-formula1')">app-formula1</button>
+<button (click)="selecionaTab('app-meu-componente')">app-meu-componente</button>
 
+<!-- Tab para o componente "app-conversao-de-juros" -->
 <div *ngIf="tab == 'app-conversao-de-juros'">
   <app-conversao-de-juros></app-conversao-de-juros>
 </div>
 
+<!-- Tab para o componente "app-formula1" -->
 <div *ngIf="tab == 'app-formula1'">
   <app-formula1></app-formula1>
+</div>
+
+<!-- Tab para o componente "app-meu-componente" -->
+<div *ngIf="tab == 'app-meu-componente'">
+  <app-meu-componente></app-meu-componente>
 </div>

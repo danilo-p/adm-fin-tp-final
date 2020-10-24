@@ -2,6 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
+## Criando um novo componente
+
+- Criar o componente com o Angular CLI: `$ ng generate component meu-componente`
+
+- Criar uma nova tab para o seu componente
+  - Abrir arquivo `src/app/app.component.html`
+    - Altere o menu com tabs para adicionar uma tab para o seu componente:
+      ```html
+        <!-- Menu com tabs -->
+        ...
+        <button (click)="selecionaTab('app-meu-componente')">app-meu-componente</button>
+      ```
+    - Adicione o codigo para tab do seu componente
+      ```html
+        <!-- Tab para o componente "app-meu-componente" -->
+        ...
+        <div *ngIf="tab == 'app-meu-componente'">
+          <app-meu-componente></app-meu-componente>
+        </div>
+      ```
+  
+- Implemente seu componente nos arquivos gerados pelo Angular CLI `src/app/meu-componente/...`)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
