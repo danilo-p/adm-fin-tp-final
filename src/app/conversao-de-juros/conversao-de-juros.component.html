@@ -1,0 +1,24 @@
+<h2>Conversão de Juros</h2>
+
+<input
+  [(ngModel)]="jurosAoDia"
+  (keyup)="calcularJurosAPartirDoDia()"
+  type="number"
+/>
+% ao dia
+<br />
+<br />
+<input
+  [(value)]="jurosAoMes"
+  (keyup)="calcularJurosAPartirDoMes()"
+  type="number"
+/>
+% ao mes
+<br />
+<br />
+<input
+  [(value)]="jurosAoAno"
+  (keyup)="calcularJurosAPartirDoAno()"
+  type="number"
+/>
+% ao ano
