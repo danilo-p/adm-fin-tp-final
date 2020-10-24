@@ -1,1 +1,12 @@
-<app-conversao-de-juros></app-conversao-de-juros>
+<h1>Trabalho Final de Administração Financeira</h1>
+
+<button (click)="selecionaTab('app-conversao-de-juros')">app-conversao-de-juros</button>
+<button (click)="selecionaTab('app-formula1')">app-formula1</button>
+
+<div *ngIf="tab == 'app-conversao-de-juros'">
+  <app-conversao-de-juros></app-conversao-de-juros>
+</div>
+
+<div *ngIf="tab == 'app-formula1'">
+  <app-formula1></app-formula1>
+</div>

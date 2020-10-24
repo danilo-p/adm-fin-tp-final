@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'adm-fin-tp-final';
+  tab = "app-conversao-de-juros";
+
+  selecionaTab(tab) {
+    this.tab = tab;
+  }
 }

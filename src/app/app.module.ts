@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConversaoDeJurosComponent } from './conversao-de-juros/conversao-de-juros.component';
+import { Formula1Component } from './formula1/formula1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConversaoDeJurosComponent
+    ConversaoDeJurosComponent,
+    Formula1Component
   ],
   imports: [
     BrowserModule,
