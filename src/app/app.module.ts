@@ -6,15 +6,13 @@ import { AppComponent } from './app.component';
 import { ConversaoDeJurosComponent } from './conversao-de-juros/conversao-de-juros.component';
 import { Formula1Component } from './formula1/formula1.component';
 import { MeuComponenteComponent } from './meu-componente/meu-componente.component';
-import { BlackAndScholesComponent } from './black-and-scholes/black-and-scholes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConversaoDeJurosComponent,
     Formula1Component,
-    MeuComponenteComponent,
-    BlackAndScholesComponent
+    MeuComponenteComponent
   ],
   imports: [
     BrowserModule,
