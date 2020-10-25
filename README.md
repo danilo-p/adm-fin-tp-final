@@ -12,13 +12,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
       ```html
         <!-- Menu com tabs -->
         ...
-        <button (click)="selecionaTab('app-meu-componente')">app-meu-componente</button>
+        <li class="nav-item" [ngClass]="tab == 'app-meu-componente' ? 'active' : ''">
+          <a class="nav-link" href="#" (click)="selecionaTab('app-meu-componente')">
+            app-meu-componente
+          </a>
+        </li>
       ```
     - Adicione o codigo para tab do seu componente
       ```html
-        <!-- Tab para o componente "app-meu-componente" -->
         ...
-        <div *ngIf="tab == 'app-meu-componente'">
+        <!-- Tab para o componente "app-meu-componente" -->
+        <div class="tab" *ngIf="tab == 'app-meu-componente'">
           <app-meu-componente></app-meu-componente>
         </div>
       ```
