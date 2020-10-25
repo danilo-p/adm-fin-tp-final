@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ConversaoDeJurosComponent } from './conversao-de-juros/conversao-de-juros.component';
 import { Formula1Component } from './formula1/formula1.component';
 import { MeuComponenteComponent } from './meu-componente/meu-componente.component';
+import { PortfolioReplicanteComponent } from './portfolio-replicante/portfolio-replicante.component';
+import { CsvFileInputComponent } from './csv-file-input/csv-file-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConversaoDeJurosComponent,
     Formula1Component,
-    MeuComponenteComponent
+    MeuComponenteComponent,
+    PortfolioReplicanteComponent,
+    CsvFileInputComponent
   ],
   imports: [
     BrowserModule,
