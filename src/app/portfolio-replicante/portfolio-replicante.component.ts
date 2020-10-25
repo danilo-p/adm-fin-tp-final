@@ -9,6 +9,8 @@ import { inv, multiply } from 'mathjs/';
 export class PortfolioReplicanteComponent {
 
   portfolioReplicante = [];
+  matrizMediaInv = [];
+  sensibilidades = [];
 
   subtraiVetores(vetor1, vetor2) {
     let resultado = [];
@@ -68,20 +70,14 @@ export class PortfolioReplicanteComponent {
     return resultado;
   }
 
-  onCsvLoad(csv) {
-    console.log("csv", csv);
-
+  calculaMatrizMediaInv(csv) {
     let derivada1 = this.calculaDiferenca(csv);
-    console.log("derivada1", derivada1);
 
     let delta = this.calculaDivisoes(derivada1)
-    console.log("delta", delta);
 
     let derivada2 = this.calculaDiferenca(derivada1);
-    console.log("derivada2", derivada2);
 
     let gama = this.calculaDivisoes(derivada2)
-    console.log("gama", gama);
 
     let matrizMedia = [
       this.calculaMediasDasColunas(delta),
@@ -89,15 +85,19 @@ export class PortfolioReplicanteComponent {
     ];
     matrizMedia.push(this.geraVetorUnitario(matrizMedia[0].length));
 
-    let matrizMediaInv = inv(matrizMedia);
+    this.matrizMediaInv = inv(matrizMedia);
 
     // Intencionalmente colunar
-    let sensibilidades = [
+    this.sensibilidades = [
       [0], // sensibilidade do delta
       [0], // sensibilidade do gama
       [1] // sempre 1
     ];
 
-    this.portfolioReplicante = multiply(matrizMediaInv, sensibilidades);
+    this.calculaPortfolioReplicante();
+  }
+
+  calculaPortfolioReplicante() {
+    this.portfolioReplicante = multiply(this.matrizMediaInv, this.sensibilidades);
   }
 }
