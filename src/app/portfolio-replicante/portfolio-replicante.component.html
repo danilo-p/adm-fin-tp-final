@@ -1,26 +1,31 @@
-<app-csv-file-input (onLoad)="calculaMatrizMediaInv($event)"></app-csv-file-input>
+<app-csv-file-input (onLoad)="onLoad($event)"></app-csv-file-input>
 
 <div *ngIf="portfolioReplicante.length > 0">
   Sensibilidade Delta
   <input
     [(ngModel)]="sensibilidades[0][0]"
-    (keyup)="calculaPortfolioReplicante()"
+    (change)="calculaPortfolioReplicante()"
     type="number"
+    step="0.01"
   />
   <br>
   <br>
   Sensibilidade Gama
   <input
     [(ngModel)]="sensibilidades[1][0]"
-    (keyup)="calculaPortfolioReplicante()"
+    (change)="calculaPortfolioReplicante()"
     type="number"
+    step="0.01"
   />
   <br>
   <br>
-  Portfolio Replicante
+  Portfolio Replicante para {{alvo}}
   <table>
     <tr>
-      <td *ngFor="let ativo of portfolioReplicante;">{{ativo}}</td>
+      <td *ngFor="let ativo of ativos;">{{ativo}}</td>
+    </tr>
+    <tr>
+      <td *ngFor="let posicao of portfolioReplicante;">{{posicao}}</td>
     </tr>
   </table>
 </div>

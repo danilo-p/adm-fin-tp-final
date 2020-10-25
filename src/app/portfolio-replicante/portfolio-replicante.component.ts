@@ -8,6 +8,8 @@ import { inv, multiply } from 'mathjs/';
 })
 export class PortfolioReplicanteComponent {
 
+  alvo = "";
+  ativos = [];
   portfolioReplicante = [];
   matrizMediaInv = [];
   sensibilidades = [];
@@ -70,8 +72,15 @@ export class PortfolioReplicanteComponent {
     return resultado;
   }
 
-  calculaMatrizMediaInv(csv) {
-    let derivada1 = this.calculaDiferenca(csv);
+  onLoad(csv) {
+    this.alvo = csv[0][0];
+    this.ativos = csv[0].slice(1);
+    let variacoes = csv.slice(1);
+    this.calculaMatrizMediaInv(variacoes);
+  }
+
+  calculaMatrizMediaInv(variacoes) {
+    let derivada1 = this.calculaDiferenca(variacoes);
 
     let delta = this.calculaDivisoes(derivada1)
 
