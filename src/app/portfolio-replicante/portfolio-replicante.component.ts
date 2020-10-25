@@ -13,6 +13,7 @@ export class PortfolioReplicanteComponent {
   portfolioReplicante = [];
   matrizMediaInv = [];
   sensibilidades = [];
+  erro = false;
 
   subtraiVetores(vetor1, vetor2) {
     let resultado = [];
@@ -107,6 +108,11 @@ export class PortfolioReplicanteComponent {
   }
 
   calculaPortfolioReplicante() {
-    this.portfolioReplicante = multiply(this.matrizMediaInv, this.sensibilidades);
+    try {
+      this.erro = false;
+      this.portfolioReplicante = multiply(this.matrizMediaInv, this.sensibilidades);
+    } catch(error) {
+      this.erro = true;
+    }
   }
 }
