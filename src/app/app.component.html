@@ -24,9 +24,15 @@
             app-meu-componente
           </a>
         </li>
+        <button ></button>
+        <li class="nav-item" [ngClass]="tab == 'app-portfolio-replicante' ? 'active' : ''">
+          <a class="nav-link" href="#" (click)="selecionaTab('app-wacc')">
+            app-wacc
+          </a>
+        </li>
         <li class="nav-item" [ngClass]="tab == 'app-portfolio-replicante' ? 'active' : ''">
           <a class="nav-link" href="#" (click)="selecionaTab('app-portfolio-replicante')">
-            Portfolio Replicante
+            app-portfolio-replicante
           </a>
         </li>
       </ul>
@@ -54,4 +60,8 @@
   <div class="tab" *ngIf="tab == 'app-portfolio-replicante'">
     <app-portfolio-replicante></app-portfolio-replicante>
   </div>
+</div>
+
+<div *ngIf="tab == 'app-wacc'">
+  <app-wacc></app-wacc>
 </div>
