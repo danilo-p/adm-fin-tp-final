@@ -9,7 +9,7 @@
 <br />
 <br />
 <input
-  [(value)]="jurosAoMes"
+  [(ngModel)]="jurosAoMes"
   (keyup)="calcularJurosAPartirDoMes()"
   type="number"
 />
@@ -17,7 +17,7 @@
 <br />
 <br />
 <input
-  [(value)]="jurosAoAno"
+  [(ngModel)]="jurosAoAno"
   (keyup)="calcularJurosAPartirDoAno()"
   type="number"
 />
