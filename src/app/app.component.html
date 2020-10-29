@@ -4,6 +4,7 @@
 <button (click)="selecionaTab('app-conversao-de-juros')">app-conversao-de-juros</button>
 <button (click)="selecionaTab('app-formula1')">app-formula1</button>
 <button (click)="selecionaTab('app-meu-componente')">app-meu-componente</button>
+<button (click)="selecionaTab('app-wacc')">app-wacc</button>
 
 <!-- Tab para o componente "app-conversao-de-juros" -->
 <div *ngIf="tab == 'app-conversao-de-juros'">
@@ -18,4 +19,8 @@
 <!-- Tab para o componente "app-meu-componente" -->
 <div *ngIf="tab == 'app-meu-componente'">
   <app-meu-componente></app-meu-componente>
+</div>
+
+<div *ngIf="tab == 'app-wacc'">
+  <app-wacc></app-wacc>
 </div>
