@@ -10,6 +10,7 @@ import { PortfolioReplicanteComponent } from './portfolio-replicante/portfolio-r
 import { CsvFileInputComponent } from './csv-file-input/csv-file-input.component';
 import { WaccComponent } from './wacc/wacc.component';
 import { CustoAcoesAlavancadasComponent } from './custo-acoes-alavancadas/custo-acoes-alavancadas.component';
+import { CapmComponent } from './capm/capm.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CustoAcoesAlavancadasComponent } from './custo-acoes-alavancadas/custo-
     PortfolioReplicanteComponent,
     CsvFileInputComponent,
     WaccComponent,
-    CustoAcoesAlavancadasComponent
+    CustoAcoesAlavancadasComponent,
+    CapmComponent
   ],
   imports: [
     BrowserModule,
