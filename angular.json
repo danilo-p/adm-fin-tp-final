@@ -117,8 +117,13 @@
               "devServerTarget": "adm-fin-tp-final:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "adm-fin-tp-final"
 }

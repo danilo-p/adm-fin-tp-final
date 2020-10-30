@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "adm-fin-tp-final": {
+      "hosting": {
+        "adm-fin-tp-final": [
+          "adm-fin-tp-final"
+        ]
+      }
+    }
+  }
+}
