@@ -33,6 +33,16 @@
           app-portfolio-replicante
         </a>
       </li>
+      <li class="nav-item" [ngClass]="tab == 'app-custo-acoes-alavancadas' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-custo-acoes-alavancadas')">
+          app-custo-acoes-alavancadas
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="tab == 'app-capm' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-capm')">
+          app-capm
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -57,8 +67,17 @@
   <div class="tab" *ngIf="tab == 'app-portfolio-replicante'">
     <app-portfolio-replicante></app-portfolio-replicante>
   </div>
-</div>
 
-<div *ngIf="tab == 'app-wacc'">
-  <app-wacc></app-wacc>
+  <div class="tab" *ngIf="tab == 'app-wacc'">
+    <app-wacc></app-wacc>
+  </div>
+
+  <div class="tab" *ngIf="tab == 'app-custo-acoes-alavancadas'">
+    <app-custo-acoes-alavancadas></app-custo-acoes-alavancadas>
+  </div>
+
+  <div class="tab" *ngIf="tab == 'app-capm'">
+    <app-capm></app-capm>
+  </div>
+
 </div>
