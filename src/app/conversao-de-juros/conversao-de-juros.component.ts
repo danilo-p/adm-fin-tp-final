@@ -10,14 +10,10 @@ export class ConversaoDeJurosComponent {
   jurosAoDia = 0;
   jurosAoMes = 0;
   jurosAoAno = 0;
-  username = "";
 
   calcularJurosAPartirDoDia() {
     this.jurosAoMes = util.calculaJurosDeDiaPraMes(this.jurosAoDia);
     this.jurosAoAno = util.calculaJurosDeDiaPraAno(this.jurosAoDia);
-    console.log(this.jurosAoDia);
-    console.log(this.jurosAoMes);
-    console.log(this.jurosAoAno);
   }
 
   calcularJurosAPartirDoMes() {

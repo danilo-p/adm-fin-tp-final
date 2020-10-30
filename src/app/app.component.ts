@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  tab = "app-conversao-de-juros";
+  tab = "app-portfolio-replicante";
 
   selecionaTab(tab) {
     this.tab = tab;

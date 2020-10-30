@@ -1,24 +1,62 @@
-<h1>Trabalho Final de Administração Financeira</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Trabalho Final de Administração Financeira</a>
 
-<!-- Menu com tabs -->
-<button (click)="selecionaTab('app-conversao-de-juros')">app-conversao-de-juros</button>
-<button (click)="selecionaTab('app-formula1')">app-formula1</button>
-<button (click)="selecionaTab('app-meu-componente')">app-meu-componente</button>
-<button (click)="selecionaTab('app-wacc')">app-wacc</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<!-- Tab para o componente "app-conversao-de-juros" -->
-<div *ngIf="tab == 'app-conversao-de-juros'">
-  <app-conversao-de-juros></app-conversao-de-juros>
-</div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- Menu com tabs -->
+      <li class="nav-item" [ngClass]="tab == 'app-conversao-de-juros' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-conversao-de-juros')">
+          app-conversao-de-juros
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="tab == 'app-formula1' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-formula1')">
+          app-formula1
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="tab == 'app-meu-componente' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-meu-componente')">
+          app-meu-componente
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="tab == 'app-wacc' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-wacc')">
+          app-wacc
+        </a>
+      </li>
+      <li class="nav-item" [ngClass]="tab == 'app-portfolio-replicante' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-portfolio-replicante')">
+          app-portfolio-replicante
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<!-- Tab para o componente "app-formula1" -->
-<div *ngIf="tab == 'app-formula1'">
-  <app-formula1></app-formula1>
-</div>
+<div class="container">
+  <!-- Tab para o componente "app-conversao-de-juros" -->
+  <div class="tab" *ngIf="tab == 'app-conversao-de-juros'">
+    <app-conversao-de-juros></app-conversao-de-juros>
+  </div>
 
-<!-- Tab para o componente "app-meu-componente" -->
-<div *ngIf="tab == 'app-meu-componente'">
-  <app-meu-componente></app-meu-componente>
+  <!-- Tab para o componente "app-formula1" -->
+  <div class="tab" *ngIf="tab == 'app-formula1'">
+    <app-formula1></app-formula1>
+  </div>
+
+  <!-- Tab para o componente "app-meu-componente" -->
+  <div class="tab" *ngIf="tab == 'app-meu-componente'">
+    <app-meu-componente></app-meu-componente>
+  </div>
+
+  <!-- Tab para o componente "app-portfolio-replicante" -->
+  <div class="tab" *ngIf="tab == 'app-portfolio-replicante'">
+    <app-portfolio-replicante></app-portfolio-replicante>
+  </div>
 </div>
 
 <div *ngIf="tab == 'app-wacc'">
