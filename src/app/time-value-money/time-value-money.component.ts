@@ -18,10 +18,22 @@ export class TimeValueMoneyComponent {
   rate = 0;
   begin = 0;
 
-  tvmRadio = 0;
+  tvmRadio = '';
 
   calculaValorPresente() {
-    this.presentValue = this.finance.PV(this.rate, this.numPeriods, this.payments, this.futureValue, this.begin)
+    this.presentValue = this.finance.PV(this.rate / 100, this.numPeriods, this.payments, this.futureValue, this.begin);
+  }
+
+  calculaTaxa() {
+    this.rate = this.finance.RATE(this.numPeriods, this.payments, this.presentValue, this.futureValue, this.begin) * 100;
+  }
+
+  calculaValorFuturo() {
+    this.futureValue = this.finance.FV(this.rate / 100, this.numPeriods, this.payments, this.presentValue, this.begin);
+  }
+
+  calculaPagamentos(){
+    this.payments = this.finance.PMT(this.rate / 100, this.numPeriods, this.presentValue, this.futureValue, this.begin);
   }
 
 }
