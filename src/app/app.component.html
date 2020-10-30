@@ -33,6 +33,11 @@
           app-portfolio-replicante
         </a>
       </li>
+      <li class="nav-item" [ngClass]="tab == 'app-time-value-money' ? 'active' : ''">
+        <a class="nav-link" href="#" (click)="selecionaTab('app-time-value-money')">
+          app-time-value-money
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -56,6 +61,11 @@
   <!-- Tab para o componente "app-portfolio-replicante" -->
   <div class="tab" *ngIf="tab == 'app-portfolio-replicante'">
     <app-portfolio-replicante></app-portfolio-replicante>
+  </div>
+
+  <!-- Tab para o componente "app-time-value-money" -->
+  <div class="tab" *ngIf="tab == 'app-time-value-money'">
+    <app-time-value-money></app-time-value-money>
   </div>
 </div>
 

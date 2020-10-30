@@ -1,1 +1,203 @@
-<p>time-value-money works!</p>
+<!--
+<p>
+    <input
+        [(ngModel)]="presentValue"
+        (keyup)="calculaPortfolioReplicante()"
+        (change)="calculaPortfolioReplicante()"
+        class="form-control"
+        type="number"
+        step="0.01"
+        name="valor-presente"
+        required
+    />
+</p>
+
+
+    <p>
+        <label for="valor-presente" class="radio-inline">
+            <input 
+                type="radio" 
+                name="optradio" 
+                id="valor-presente"
+            /> PV
+        </label>
+        <label for="valor-futuro" class="radio-inline">
+            <input 
+                type="radio" 
+                name="optradio" 
+                id="valor-futuro"
+            /> FV
+        </label>
+    </p>
+
+
+<div class="container">
+ <div [hidden]="submitted">
+    <h1>Valor do Dinheiro no Tempo (TVM)</h1>
+    <form (ngSubmit)="onSubmit()" #tvmForm="ngForm">
+        <div class="form-group">
+            <div class="row">
+                    <label for="valor-presente" class="radio-inline">
+                        <input 
+                            type="radio" 
+                            name="optradio" 
+                            id="valor-presente"
+                        /> PV
+                    </label>
+                <p>
+                    <label for="valor-futuro" class="radio-inline">
+                        <input 
+                            type="radio" 
+                            name="optradio" 
+                            id="valor-futuro"
+                        /> FV
+                    </label>
+                </p>
+            </div>
+        </div>
+    </form>
+ </div>
+</div>
+-->
+
+<h1>Valor do Dinheiro no Tempo (TVM)</h1>
+
+<p>
+    Marque a seguir o parâmetro que deseja obter.
+</p>
+
+<div class="row">
+    <div class="col-md-1">
+        <!-- Numero de Periodos -->
+        <div class="custom-control custom-radio">
+        <input 
+            [(ngModel)]="tvmRadio" value="n"
+            type="radio" class="custom-control-input" id="radio-numero-periodos" name="tvmRadios"
+        >
+        <label class="custom-control-label" for="radio-numero-periodos">n</label>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <!-- Taxa de juros -->
+        <div class="custom-control custom-radio">
+        <input 
+            [(ngModel)]="tvmRadio" value="i"
+            type="radio" class="custom-control-input" id="radio-taxa" name="tvmRadios"
+        >
+        <label class="custom-control-label" for="radio-taxa">i</label>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <!-- Valor Presente -->
+        <div class="custom-control custom-radio">
+        <input 
+            [(ngModel)]="tvmRadio" value="pv"
+            type="radio" class="custom-control-input" id="radio-valor-presente" name="tvmRadios"
+        >
+        <label class="custom-control-label" for="radio-valor-presente">PV</label>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <!-- Payment -->
+        <div class="custom-control custom-radio">
+        <input 
+            [(ngModel)]="tvmRadio" value="pmt"
+            type="radio" class="custom-control-input" id="radio-payment" name="tvmRadios"
+        >
+        <label class="custom-control-label" for="radio-payment">PMT</label>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <!-- Valor Futuro -->
+        <div class="custom-control custom-radio">
+        <input 
+            [(ngModel)]="tvmRadio" value="fv"
+            type="radio" class="custom-control-input" id="radio-valor-futuro" name="tvmRadios"
+        >
+        <label class="custom-control-label" for="radio-valor-futuro">FV</label>
+        </div>
+    </div>
+</div>
+
+<p>value do radio: {{tvmRadio}}</p>
+
+<div *ngIf="tvmRadio === 'pv'">
+    <h2>Present Value</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>
+                <label for="numero-periodos">
+                    Número de períodos <strong>(n)</strong>
+                </label>
+                <input 
+                    [(ngModel)]="numPeriods"
+                    (keyup)="calculaValorPresente()"
+                    class="form-control"
+                    type="number"
+                    step="1"
+                    name="numero-periodos"
+                    required
+                >
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <p>
+                <label for="taxa">
+                    Taxa <strong>(i)</strong>
+                </label>
+                <input 
+                    [(ngModel)]="rate"
+                    (keyup)="calculaValorPresente()"
+                    class="form-control"
+                    type="number"
+                    step="0.01"
+                    name="taxa"
+                    required
+                >
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>
+                <label for="pagamentos">
+                    Pagamentos por período <strong>(PMT)</strong>
+                </label>
+                <input 
+                    [(ngModel)]="payments"
+                    (keyup)="calculaValorPresente()"
+                    class="form-control"
+                    type="number"
+                    step="1"
+                    name="pagamentos"
+                    required
+                >
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <p>
+                <label for="valor-futuro">
+                    Valor Futuro <strong>(FV)</strong>
+                </label>
+                <input 
+                    [(ngModel)]="futureValue"
+                    (keyup)="calculaValorPresente()"
+                    class="form-control"
+                    type="number"
+                    step="1"
+                    name="valor-futuro"
+                    required
+                >
+            </p>
+        </div>
+    </div>
+
+    <h3>Resultado</h3>
+    <p>
+        Valor Presente <strong>(PV)</strong> = {{presentValue}}
+    </p>
+</div>
