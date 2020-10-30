@@ -9,6 +9,7 @@ import { MeuComponenteComponent } from './meu-componente/meu-componente.componen
 import { PortfolioReplicanteComponent } from './portfolio-replicante/portfolio-replicante.component';
 import { CsvFileInputComponent } from './csv-file-input/csv-file-input.component';
 import { WaccComponent } from './wacc/wacc.component';
+import { TimeValueMoneyComponent } from './time-value-money/time-value-money.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WaccComponent } from './wacc/wacc.component';
     MeuComponenteComponent,
     PortfolioReplicanteComponent,
     CsvFileInputComponent,
-    WaccComponent
+    WaccComponent,
+    TimeValueMoneyComponent
   ],
   imports: [
     BrowserModule,
