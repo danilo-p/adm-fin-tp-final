@@ -66,16 +66,18 @@
     </ul>
   </div>
 
-  <table *ngIf="!erro" class="table">
-    <thead>
-      <tr>
-        <th *ngFor="let ativo of ativos;">{{ativo}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td *ngFor="let posicao of portfolioReplicante;">{{posicao}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive" *ngIf="!erro">
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let ativo of ativos;">{{ativo}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td *ngFor="let posicao of portfolioReplicante;">{{posicao}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
