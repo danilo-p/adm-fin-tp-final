@@ -8,89 +8,40 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <!-- Menu com tabs -->
-      <li class="nav-item" [ngClass]="tab == 'app-conversao-de-juros' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-conversao-de-juros')">
-          app-conversao-de-juros
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/conversao-de-juros">
+          Conversão de Juros
         </a>
       </li>
-      <!--
-      <li class="nav-item" [ngClass]="tab == 'app-formula1' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-formula1')">
-          app-formula1
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/wacc">
+          WACC
         </a>
       </li>
-      
-      <li class="nav-item" [ngClass]="tab == 'app-meu-componente' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-meu-componente')">
-          app-meu-componente
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/portfolio-replicante">
+          Portfolio Replicante
         </a>
       </li>
-      -->
-      <li class="nav-item" [ngClass]="tab == 'app-wacc' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-wacc')">
-          app-wacc
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/time-value-money">
+          Time Value Money
         </a>
       </li>
-      <li class="nav-item" [ngClass]="tab == 'app-portfolio-replicante' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-portfolio-replicante')">
-          app-portfolio-replicante
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/custo-acoes-alavancadas">
+          Custo Ações Alavancadas
         </a>
       </li>
-      <li class="nav-item" [ngClass]="tab == 'app-time-value-money' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-time-value-money')">
-          app-time-value-money
-        </a>
-      </li>
-      <li class="nav-item" [ngClass]="tab == 'app-custo-acoes-alavancadas' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-custo-acoes-alavancadas')">
-          app-custo-acoes-alavancadas
-        </a>
-      </li>
-      <li class="nav-item" [ngClass]="tab == 'app-capm' ? 'active' : ''">
-        <a class="nav-link" href="#" (click)="selecionaTab('app-capm')">
-          app-capm
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/capm">
+          CAPM
         </a>
       </li>
     </ul>
   </div>
 </nav>
 
-<div class="container">
-  <!-- Tab para o componente "app-conversao-de-juros" -->
-  <div class="tab" *ngIf="tab == 'app-conversao-de-juros'">
-    <app-conversao-de-juros></app-conversao-de-juros>
-  </div>
-
-  <!-- Tab para o componente "app-formula1" -->
-  <div class="tab" *ngIf="tab == 'app-formula1'">
-    <app-formula1></app-formula1>
-  </div>
-
-  <!-- Tab para o componente "app-meu-componente" -->
-  <div class="tab" *ngIf="tab == 'app-meu-componente'">
-    <app-meu-componente></app-meu-componente>
-  </div>
-
-  <!-- Tab para o componente "app-portfolio-replicante" -->
-  <div class="tab" *ngIf="tab == 'app-portfolio-replicante'">
-    <app-portfolio-replicante></app-portfolio-replicante>
-  </div>
-
-  <!-- Tab para o componente "app-time-value-money" -->
-  <div class="tab" *ngIf="tab == 'app-time-value-money'">
-    <app-time-value-money></app-time-value-money>
-  </div>
-
-  <div class="tab" *ngIf="tab == 'app-wacc'">
-    <app-wacc></app-wacc>
-  </div>
-
-  <div class="tab" *ngIf="tab == 'app-custo-acoes-alavancadas'">
-    <app-custo-acoes-alavancadas></app-custo-acoes-alavancadas>
-  </div>
-
-  <div class="tab" *ngIf="tab == 'app-capm'">
-    <app-capm></app-capm>
-  </div>
-
+<div class="container app-container">
+  <router-outlet></router-outlet>
 </div>
