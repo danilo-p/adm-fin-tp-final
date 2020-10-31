@@ -25,3 +25,11 @@
 .descricao {
   margin-top: 50px;
 }
+
+.github-link {
+  text-align: center;
+}
+
+.github-link img {
+  width: 50px;
+}
