@@ -5,6 +5,7 @@
 <input
   [(ngModel)]="jurosAoDia"
   (keyup)="calcularJurosAPartirDoDia()"
+  (change)="calcularJurosAPartirDoDia()"
   type="number"
 />
 % ao dia
@@ -13,6 +14,7 @@
 <input
   [(ngModel)]="jurosAoMes"
   (keyup)="calcularJurosAPartirDoMes()"
+  (change)="calcularJurosAPartirDoMes()"
   type="number"
 />
 % ao mes
@@ -21,6 +23,7 @@
 <input
   [(ngModel)]="jurosAoAno"
   (keyup)="calcularJurosAPartirDoAno()"
+  (change)="calcularJurosAPartirDoAno()"
   type="number"
 />
 % ao ano

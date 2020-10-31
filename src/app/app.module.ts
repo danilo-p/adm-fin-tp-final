@@ -43,7 +43,7 @@ import { HomeComponent } from './home/home.component';
       { path: 'portfolio-replicante', component: PortfolioReplicanteComponent },
       { path: 'time-value-money', component: TimeValueMoneyComponent },
       { path: 'custo-acoes-alavancadas', component: CustoAcoesAlavancadasComponent },
-      { path: 'capm', component: WaccComponent }
+      { path: 'capm', component: CapmComponent }
     ]),
   ],
   providers: [],
